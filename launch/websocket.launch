@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Iniciar rosbridge server para la comunicación con el frontend -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="port" value="9090"/>
+  </include>
+
+  <!-- Iniciar el bridge del brazo -->
+  <node name="ros_arm_bridge" pkg="exo_arm" type="ros_arm_bridge.py" output="screen">
+    <param name="port" value="/dev/ttyACM0"/>
+    <param name="baudrate" value="115200"/>
+  </node>
+</launch> 

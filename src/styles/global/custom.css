@@ -1,0 +1,45 @@
+body {
+    background-color: #f4f6f9;
+    font-family: "Arial", sans-serif;
+}
+
+/* Estilos del navbar */
+.navbar-custom {
+    background-color: #3498db;
+}
+
+.navbar-custom .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-custom .nav-link {
+    color: white;
+}
+
+/* Tarjetas */
+.card-custom {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    background-color: #2ecc71;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.btn-custom:hover {
+    background-color: #2980b9;
+}

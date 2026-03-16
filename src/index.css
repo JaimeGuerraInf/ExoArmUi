@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a2e;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#tsparticles {
+  width: 100%;
+  height: 100vh;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#tsparticles canvas {
+  position: fixed !important;
+}
+
+.dashboard-gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(50, 50, 100, 0.4), rgba(100, 50, 150, 0.4));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Espaciado consistente para todas las páginas */
+.page-container {
+  padding: 20px;
+  padding-bottom: 80px; /* Espacio estándar en la parte inferior */
+  min-height: calc(100vh - 40px); /* Asegurar altura mínima */
+}
+
+/* Espaciado específico para contenido de ejercicios */
+.exercise-content {
+  padding-bottom: 80px; /* Espaciado estándar */
+}
+
+/* Espaciado para páginas de información */
+.info-content {
+  padding-bottom: 80px; /* Espaciado estándar */
+}
+
+/* Media queries para espaciado responsivo */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 12px 8px 80px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem 1rem 80px 1rem;
+  }
+}

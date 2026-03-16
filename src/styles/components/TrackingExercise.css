@@ -1,0 +1,401 @@
+.tracking-exercise-container {
+  width: 100%;
+  padding: 12px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tracking-exercise-content {
+  width: 100%;
+  padding: 12px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.canvas-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.canvas-container-compact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(110, 243, 197, 0.1));
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.score-container {
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.start-exercise-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.preparing-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.score-container h5 {
+  color: #6EF3C5;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(110, 243, 197, 0.3);
+}
+
+.status-indicator {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.text-success {
+  color: #6EF3C5 !important;
+  text-shadow: 0 0 15px rgba(110, 243, 197, 0.6);
+  font-weight: 600;
+}
+
+.text-danger {
+  color: #FF6B6B !important;
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+  font-weight: 600;
+}
+
+.start-exercise-btn {
+  background: linear-gradient(135deg, #6C5CE7, #6EF3C5);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-width: 250px;
+}
+
+.start-exercise-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.start-exercise-btn:hover::before {
+  left: 100%;
+}
+
+.start-exercise-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(108, 92, 231, 0.5);
+  background: linear-gradient(135deg, #5B4CED, #5FE3B5);
+}
+
+.start-exercise-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+/* Estilos para la información del ejercicio */
+.exercise-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.exercise-score {
+  color: #6EF3C5;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.current-note {
+  text-align: right;
+  color: #6EF3C5;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-shadow: 0 2px 10px rgba(110, 243, 197, 0.4);
+}
+
+.note-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 3px;
+}
+
+.exercise-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #6EF3C5;
+  font-size: 1rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* Barra de progreso musical */
+.progress-section {
+  margin-top: 12px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6C5CE7, #6EF3C5);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  box-shadow: 0 1px 4px rgba(110, 243, 197, 0.4);
+}
+
+/* Ejercicio completado */
+.completion-card {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(110, 243, 197, 0.2), rgba(108, 92, 231, 0.2));
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid rgba(110, 243, 197, 0.4);
+  box-shadow: 0 8px 32px rgba(110, 243, 197, 0.2);
+}
+
+.completion-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #6EF3C5;
+  text-shadow: 0 2px 15px rgba(110, 243, 197, 0.5);
+  margin-bottom: 8px;
+}
+
+.completion-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Espacio adicional ya manejado por padding-bottom */
+
+/* Estilos para la cuenta atrás estilo videojuego */
+.countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.countdown-number {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #6EF3C5;
+  text-shadow: 
+    0 0 20px rgba(110, 243, 197, 0.8),
+    0 0 40px rgba(110, 243, 197, 0.6),
+    0 0 60px rgba(110, 243, 197, 0.4),
+    4px 4px 8px rgba(0, 0, 0, 0.8);
+  animation: countdownPulse 1s ease-in-out;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+  -webkit-text-stroke: 3px black;
+}
+
+.countdown-ya {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #6EF3C5;
+  text-shadow: 
+    0 0 20px rgba(110, 243, 197, 0.8),
+    0 0 40px rgba(110, 243, 197, 0.6),
+    0 0 60px rgba(110, 243, 197, 0.4),
+    3px 3px 6px rgba(0, 0, 0, 0.8);
+  animation: yaAnimation 0.8s ease-out;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+  -webkit-text-stroke: 2px black;
+}
+
+@keyframes countdownPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes yaAnimation {
+  0% {
+    transform: scale(0.2) rotate(-15deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  30% {
+    transform: scale(1.4) rotate(10deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  60% {
+    transform: scale(0.9) rotate(-3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Efectos adicionales para el canvas durante la cuenta atrás */
+.canvas-container.countdown-active {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.canvas-container.countdown-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Espacio adicional ya manejado por padding-bottom */ 

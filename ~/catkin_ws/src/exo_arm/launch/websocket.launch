@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Nodo de rosbridge websocket -->
+  <node name="rosbridge_websocket" pkg="rosbridge_server" type="rosbridge_websocket" output="screen">
+    <param name="address" value="0.0.0.0"/>
+    <param name="port" value="9090"/>
+    <param name="authenticate" value="false"/>
+    <param name="retry_startup_delay" value="5"/>
+    <param name="fragment_timeout" value="600"/>
+    <param name="delay_between_messages" value="0"/>
+    <param name="max_message_size" value="None"/>
+    <param name="unregister_timeout" value="10"/>
+    <param name="use_compression" value="false"/>
+  </node>
+
+  <!-- Nodo de rosapi para servicios web -->
+  <node name="rosapi" pkg="rosapi" type="rosapi_node" output="screen">
+    <param name="topics_glob" value="[*]"/>
+    <param name="services_glob" value="[*]"/>
+    <param name="params_glob" value="[*]"/>
+  </node>
+
+  <!-- Nodo para la comunicación con el Arduino -->
+  <node name="ros_arm_bridge" pkg="exo_arm" type="ros_arm_bridge.py" output="screen">
+    <param name="port" value="socket://host.docker.internal:5000"/>  <!-- Conexión TCP al puente serial -->
+    <param name="baudrate" value="115200"/>
+    <param name="retry_interval" value="5"/>
+  </node>
+</launch> 

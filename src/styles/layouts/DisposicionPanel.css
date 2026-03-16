@@ -1,0 +1,22 @@
+.dashboard-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
+} 
